@@ -1,0 +1,23 @@
+# FastAPI and server
+fastapi==0.115.5
+uvicorn[standard]==0.34.0
+pydantic==2.12.4
+pydantic-settings==2.6.1
+python-multipart==0.0.20
+
+# AI and ML
+dedalus-labs>=0.1.0a9
+anthropic==0.42.0
+
+# Data processing
+pandas==2.2.3
+numpy==2.2.1
+
+# HTTP client (for inter-service communication)
+httpx==0.28.1
+
+# Database
+supabase==2.24.0
+
+# Environment variables
+python-dotenv==1.0.1

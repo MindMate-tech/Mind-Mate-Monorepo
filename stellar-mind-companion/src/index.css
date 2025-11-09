@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep space theme - darker cosmic base */
+    --background: 240 30% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 25% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Vibrant purple primary */
+    --primary: 263 85% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 250 40% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 250 30% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Pink accent */
+    --accent: 320 70% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 250 30% 15%;
+    --input: 250 30% 15%;
+    --ring: 263 85% 65%;
+
+    --radius: 0.75rem;
+
+    /* Space theme tokens */
+    --space-purple: 270 50% 40%;
+    --space-blue: 230 60% 50%;
+    --nebula-pink: 320 70% 60%;
+    --star-glow: 50 100% 80%;
+    
+    /* Rich gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(263 85% 65% / 0.15), hsl(320 70% 60% / 0.1));
+    --gradient-space: radial-gradient(ellipse at top, hsl(270 50% 40% / 0.15), transparent 50%);
+    
+    /* Enhanced shadows */
+    --shadow-glow: 0 0 40px hsl(263 85% 65% / 0.4);
+    --shadow-soft: 0 4px 30px hsl(240 30% 2% / 0.7);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: radial-gradient(ellipse at top, hsl(var(--space-purple) / 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom, hsl(var(--space-blue) / 0.1), transparent 50%),
+                hsl(var(--background));
+    background-attachment: fixed;
+  }
+}
+
+.space-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: hsl(var(--foreground));
+  border-radius: 50%;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  opacity: 0;
+  box-shadow: 0 0 4px hsl(var(--foreground) / 0.8);
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: scale(0.8); 
+  }
+  50% { 
+    opacity: var(--opacity, 0.8); 
+    transform: scale(1.2); 
+  }
+}
+
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--foreground)), transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 6px 2px hsl(var(--foreground) / 0.8);
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--foreground) / 0.8), transparent);
+}
+
+.particle {
+  position: absolute;
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}

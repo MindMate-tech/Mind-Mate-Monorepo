@@ -1,0 +1,22 @@
+Manufacturer: Philips Medical Systems
+Model name: Achieva
+Repetition time (ms): 12.0571002960205
+Echo time[0] (ms): 
+Echo time[1] (ms): 5.797
+Inversion time (ms): 
+Flip angle: 8
+Number of averages: 1
+Slice thickness (mm): 0.7
+Slice spacing (mm): 0.7
+Image columns: 384
+Image rows: 384
+Number of frames: 
+Phase encoding direction: ROW
+Voxel size x (mm): 0.666667
+Voxel size y (mm): 0.666667
+Number of volumes: 1
+Number of slices: 274
+Number of files: 274
+Number of frames: 0
+Slice duration (ms) : 0
+Orientation: sag
